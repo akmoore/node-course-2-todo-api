@@ -23,7 +23,7 @@ app.get('/todos', (req, res) => {
         res.json({todos});
     }).catch(err => {
         res.status(400).send(err);
-    })
+    });
 });
 
 app.listen(3001, () => {
