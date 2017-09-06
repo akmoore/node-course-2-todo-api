@@ -10,7 +10,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.post('/todos', (req, res) => {
-    // console.log(req.body);
     var todo = new Todo(req.body);
     todo.save().then(todo => {
         res.status(201).send(todo);
@@ -22,4 +21,8 @@ app.post('/todos', (req, res) => {
 app.listen(3001, () => {
     console.log('Started on port 3001');
 })
+
+module.exports = {
+    app
+};
 
